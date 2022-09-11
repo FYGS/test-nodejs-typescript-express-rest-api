@@ -4,9 +4,9 @@
 - NodeJS >= 12
 
 ### Development:
-- `npm run serve`
+- `npm run serve` and browse to `http://localhost:8000/`
 ### Production:
-- `npm start` and browse to `http://localhost:8000/`
+- `npm start`
 
 ### API endpoints:
 - Get all companies: `GET /companies`
