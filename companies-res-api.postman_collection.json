@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "475c092c-4357-4b99-8716-b8d8d05d5054",
+		"name": "companies-res-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all companies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/companies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a company to the existing companies",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Emmanuel's company\",\r\n        \"sector\": \"Cake and others\",\r\n        \"siren\": 1735569028,\r\n        \"results\": [\r\n            {\r\n                \"ca\": 2077895357,\r\n                \"margin\": 47497351,\r\n                \"ebitda\": 4265952,\r\n                \"loss\": 8558474,\r\n                \"year\": 1917\r\n            },\r\n            {\r\n                \"ca\": 432070,\r\n                \"margin\": 427778,\r\n                \"ebitda\": 290433,\r\n                \"loss\": 8023406,\r\n                \"year\": 2016\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/companies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify a comapny that matches the given siren",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"OUESTECH SARL | GUINEA\",\r\n        \"sector\": \"Services & Tech\",\r\n        \"siren\": 13355690271,\r\n        \"results\": [\r\n            {\r\n                \"ca\": 2077895357,\r\n                \"margin\": 47497351,\r\n                \"ebitda\": 4265952,\r\n                \"loss\": 8558474,\r\n                \"year\": 2017\r\n            },\r\n            {\r\n                \"ca\": 432070,\r\n                \"margin\": 427778,\r\n                \"ebitda\": 290433,\r\n                \"loss\": 8023406,\r\n                \"year\": 2016\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/companies/13355690271",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"companies",
+						"13355690271"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a company that matches the given siren",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/companies/13355690271",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"companies",
+						"13355690271"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a company by siren",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/companies/13355690271",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"companies",
+						"13355690271"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by sector",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/companies/filter/Services",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"companies",
+						"filter",
+						"Services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get two last years result",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/companies/13355690271/compare",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"companies",
+						"13355690271",
+						"compare"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
