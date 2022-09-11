@@ -3,20 +3,26 @@ import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
 
+import { routes } from './routes';
+import { CompaniesService } from './services';
+
 dotenv.config();
 
 
-const PORT = process.env.PORT || 8080;
 const app: Express = express();
+const PORT = process.env.PORT || 8080;
+
+// Instanciation
+const companiesService = new CompaniesService('./src/data/tkt_mock_data.json');
 
 
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Working!');
-});
+app.use('/', routes({
+  companiesService,
+}));
 
 
 app.listen(PORT, () => {
